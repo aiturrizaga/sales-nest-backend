@@ -10,10 +10,10 @@ import { UbigeoEntity } from "./entities/ubigeo.entity";
   imports: [
     TypeOrmModule.forRoot({
       "type": "oracle",
-      "host": "23.254.165.3",
+      "host": "localhost",
       "port": 1521,
-      "username": "venta_consorcio",
-      "password": "venta",
+      "username": "HR",
+      "password": "system",
       "sid": "xe",
       "entities": [__dirname + "/**/**.entity{.ts,.js}"],
       "synchronize": false,
