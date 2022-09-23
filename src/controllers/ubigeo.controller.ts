@@ -24,7 +24,7 @@ export class UbigeoController {
   }
 
   @Get(":id")
-  findById(@Param("id") id: string) {
+  async findById(@Param("id") id: string): Promise<UbigeoEntity[]> {
     return this.ubigeoService.findById(id);
   }
 
