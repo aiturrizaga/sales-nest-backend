@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
 import { UbigeoService } from "../services/ubigeo.service";
-import { UbigeoEntity } from "../entities/ubigeo.entity";
+import { Ubigeo } from "../entities/ubigeo.entity";
 
 @Controller("ubigeos")
 export class UbigeoController {
@@ -9,22 +9,22 @@ export class UbigeoController {
   }
 
   @Post()
-  async register(@Body() ubigeo: UbigeoEntity): Promise<UbigeoEntity> {
+  async register(@Body() ubigeo: Ubigeo): Promise<Ubigeo> {
     return this.ubigeoService.register(ubigeo);
   }
 
   @Put()
-  async update(@Body() ubigeo: UbigeoEntity): Promise<UbigeoEntity> {
+  async update(@Body() ubigeo: Ubigeo): Promise<Ubigeo> {
     return this.ubigeoService.update(ubigeo);
   }
 
   @Get()
-  async findAll(): Promise<UbigeoEntity[]> {
+  async findAll(): Promise<Ubigeo[]> {
     return this.ubigeoService.findAll();
   }
 
   @Get(":id")
-  async findById(@Param("id") id: string): Promise<UbigeoEntity[]> {
+  async findById(@Param("id") id: string): Promise<Ubigeo[]> {
     return this.ubigeoService.findById(id);
   }
 

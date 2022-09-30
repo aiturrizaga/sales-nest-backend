@@ -1,19 +1,19 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { UbigeoEntity } from "../entities/ubigeo.entity";
+import { Ubigeo } from "../entities/ubigeo.entity";
 import { Repository } from "typeorm";
 
 @Injectable()
 export class UbigeoService {
 
-  constructor(@InjectRepository(UbigeoEntity) private ubigeoRepository: Repository<UbigeoEntity>) {
+  constructor(@InjectRepository(Ubigeo) private ubigeoRepository: Repository<Ubigeo>) {
   }
 
-  register(ubigeo: UbigeoEntity) {
+  register(ubigeo: Ubigeo) {
     return this.ubigeoRepository.save(ubigeo);
   }
 
-  update(ubigeo: UbigeoEntity) {
+  update(ubigeo: Ubigeo) {
     return this.ubigeoRepository.save(ubigeo)
   }
 
