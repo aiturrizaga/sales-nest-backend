@@ -8,6 +8,11 @@ import { Ubigeo } from "./entities/ubigeo.entity";
 import { Cliente } from "./entities/cliente.entity";
 import { ClienteController } from "./controllers/cliente.controller";
 import { ClienteService } from "./services/cliente.service";
+import { Vendedor } from "./entities/vendedor.entity";
+import { VendedorController } from "./controllers/vendedor.controller";
+import { VendedorService } from "./services/vendedor.service";
+import { AuthController } from "./controllers/auth.controller";
+import { AuthService } from "./services/auth.service";
 
 @Module({
   imports: [
@@ -22,10 +27,22 @@ import { ClienteService } from "./services/cliente.service";
       synchronize: false,
       logging: true
     }),
-    TypeOrmModule.forFeature([Ubigeo, Cliente])
+    TypeOrmModule.forFeature([Ubigeo, Cliente, Vendedor])
   ],
-  controllers: [AppController, UbigeoController, ClienteController],
-  providers: [AppService, UbigeoService, ClienteService]
+  controllers: [
+    AppController,
+    UbigeoController,
+    ClienteController,
+    VendedorController,
+    AuthController
+  ],
+  providers: [
+    AppService,
+    UbigeoService,
+    ClienteService,
+    VendedorService,
+    AuthService
+  ]
 })
 export class AppModule {
 }

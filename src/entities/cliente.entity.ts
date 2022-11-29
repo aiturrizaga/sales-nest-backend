@@ -28,6 +28,9 @@ export class Cliente {
   @Column({ name: "ESTCLI", nullable: true })
   estado: string;
 
+  @Column({ name: "FECCREA", nullable: false })
+  fecha: Date;
+
   @OneToOne(() => Ubigeo)
   @JoinColumn({name: 'UBICLI'})
   ubigeo: Ubigeo;
