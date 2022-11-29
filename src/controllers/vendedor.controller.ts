@@ -43,4 +43,9 @@ export class VendedorController {
     return this.vendedorService.delete(id);
   }
 
+  @Get("/nombre/:name")
+  findByName(@Param("name") name: string) {
+    return this.vendedorService.finByName(name);
+  }
+
 }

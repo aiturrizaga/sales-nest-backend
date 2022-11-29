@@ -56,4 +56,8 @@ export class VendedorService {
     return this.dataSource.query(`SELECT count(1) FROM VENDEDOR`);
   }
 
+  finByName(nombre: string) {
+    return this.vendedorRepository.findBy({nombre});
+  }
+
 }
